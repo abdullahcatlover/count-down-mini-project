@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react'
+import Countdown from "./components/countdown/Countdown";
+import Product from "./components/Product/Product";
+
+
+
 
 function App() {
+   const [showCountDown, setShowCountDown] = useState(true);
+   const [showBtn, setShowBtn] = useState(true)
+   
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div>
+      {showCountDown &&  (
+        <Countdown onHideCountDown={()=> setShowCountDown(false)}/>
+      )}
+     {/*  this && means then */}
+        
+       {
+        showBtn && (
+          <Product  handleShowBtn={()=> setShowBtn(false)}   onHideCountDown={()=> setShowCountDown(true)}/>
+        )
+       }
     </div>
   );
 }

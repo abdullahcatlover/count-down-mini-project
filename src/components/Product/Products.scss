@@ -1,0 +1,35 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .check__disc {
+        color: #fff;
+        font-size: 1.4rem;
+        border-bottom: 1px solid orangered;
+        background: orangered;
+        padding: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+ 
+
+    .check__disc:active {
+        transform: translateY(1px);
+    }
+}
+
+.product-image {
+    flex: 1;
+}
+
+.product-image img {
+    width: 100%;
+}
+
+.product-descr {
+    flex: 1;
+}
+
